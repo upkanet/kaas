@@ -1,9 +1,15 @@
+//Use http to create server
 let http = require('http');
+//Use url to play with resquest url
 let url = require('url');
+//Use robot to control computer inputs (-node10 version for last NodeJS compatibility)
 let robot = require('robotjs-node10');
 
+//Specify port 1119 (for "K" "S" keyboard as a service)
 var port = 1119;
+//Check server command line arguments
 var myArgs = process.argv.slice(2);
+//Activate verbose if requested
 var verbose = (myArgs[0] == 'verbose');
 
 let server = http.createServer(function(req,res){
