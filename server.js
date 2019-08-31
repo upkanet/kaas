@@ -1,7 +1,11 @@
 //Use http to create server
 let http = require('http');
+//Use file system to read html pages
+let fs = require('fs');
 //Use robot to control computer inputs (-node10 version for last NodeJS compatibility)
 let robot = require('robotjs-node10');
+//Use panels
+let panels = require('./panels')
 
 //Specify port 1119 (for "K" "S" keyboard as a service)
 var port = 1119;
@@ -40,6 +44,12 @@ let server = http.createServer(function(req,res){
 	}
 	else{
 		verbose ? console.log('GET') : null;
+		if(req.url === "/"){
+			res.end(panels.list());
+		}
+		else{
+			res.end(panels.showPanel(req.url.substr(1)));
+		}
 	}
 });
 
