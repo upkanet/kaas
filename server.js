@@ -47,7 +47,7 @@ let server = http.createServer(function(req,res){
 		if(req.url === "/"){
 			res.end(panels.list());
 		}
-		else{
+		else if(req.url != '/favicon.ico'){
 			res.end(panels.showPanel(req.url.substr(1)));
 		}
 	}

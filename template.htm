@@ -1,5 +1,27 @@
 <html>
-<head></head>
+<head>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$(".btn").each(function(){
+				$(this).click(function(){
+					var d = JSON.stringify($(this).data());
+					var baseurl = "http://" + window.location.href.split('/')[2];
+					$.ajax({
+						type: "POST",
+						url: baseurl,
+						dataType: 'json',
+						data: d,
+						contentType: 'application/json',
+						success: function(c){
+							console.log(c);
+						}
+					});
+				})
+			});
+		});
+	</script>
+</head>
 <body>
 	{{content}}
 </body>
