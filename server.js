@@ -7,7 +7,6 @@ let robot = require('robotjs-node10');
 var port = 1119;
 //Activate verbose if requested
 var verbose = (process.argv[2] == 'verbose');
-console.log(verbose);
 
 //Create the server handler
 let server = http.createServer(function(req,res){
@@ -45,6 +44,8 @@ let server = http.createServer(function(req,res){
 });
 
 
-console.log('KAAS server on port '+port+'...');
+require('dns').lookup(require('os').hostname(), function (err, add, fam) {
+	console.log('KAAS server IP '+add+' on port '+port+'...');
+});
 verbose ? console.log('==Verbose mode==') : true;
 server.listen(port);
