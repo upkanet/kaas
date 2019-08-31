@@ -62,4 +62,4 @@ typings/
 
 # panels folder
 panels/*
-!panels/.gitkeep
+!panels/example.htm
