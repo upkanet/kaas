@@ -1,0 +1,31 @@
+{
+  "name": "kaas",
+  "version": "1.0.0",
+  "description": "Keyboard as a Service - expose RobotJS in a webservice with custom UI (panels)",
+  "main": "server.js",
+  "dependencies": {
+    "robotjs-node10": "^0.5.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/upkanet/kaas.git"
+  },
+  "keywords": [
+    "automation",
+    "robotjs",
+    "panel",
+    "tablet",
+    "smartphone"
+  ],
+  "author": "Jean-Damien Louise",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/upkanet/kaas/issues"
+  },
+  "homepage": "https://github.com/upkanet/kaas#readme"
+}
