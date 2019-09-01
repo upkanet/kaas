@@ -24,18 +24,7 @@ let server = http.createServer(function(req,res){
 		req.on('data', function(data) {
     		var cmd = JSON.parse(data);
     		try{
-    			if(cmd.delay > 0){
-    				var a = JSON.parse(JSON.stringify(cmd.args));
-    				a.splice(1,0,'down');
-    				console.log(a);
-    				robot.keyToggle.apply(null,a);
-    				a[1] = 'up';
-    				console.log(cmd.delay, a);
-    				setTimeout(function(){robot.keyToggle.apply(null,a);}, (Math.random()+0.5) * cmd.delay);
-    			}
-    			else{
-    				robot[cmd.function].apply(null,cmd.args);
-    			}
+    			robot[cmd.function].apply(null,cmd.args);
     		}
     		catch(e){
     			verbose ? console.error('Function error') : null;
